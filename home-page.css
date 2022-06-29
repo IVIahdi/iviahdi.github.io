@@ -9,3 +9,22 @@
     left: 50%;
     transform: translate(-50%,-50%);
 }
+#big-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #478153;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+#big-content.fade{
+    opacity: 1;
+}
+h2{
+    background-color: snow;
+    padding: 0.5rem;
+    border-radius: 10%;
+}
+#pic{
+    transition: opacity 0.5s;
+}
