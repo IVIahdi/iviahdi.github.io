@@ -10,3 +10,7 @@ function logo_clicked() {
         content.classList.toggle('fade');
     }
 }
+function heart(){
+    let logo = document.getElementById('pic')
+    logo.classList.toggle('animate__heartBeat')
+}
