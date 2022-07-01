@@ -41,7 +41,7 @@
                 let cell = row.insertCell().innerHTML = '<td><input class="input" type="text"></td>'
                 cell = row.insertCell().innerHTML = '<td><input class="input" type="text"></td>'
                 cell = row.insertCell().innerHTML = `
-            <select name="grades" id="grades">
+            <select class="input">
                             <option value="4">A+</option>
                             <option value="3.75">A</option>
                             <option value="3.5">B+</option>
@@ -81,9 +81,9 @@
                 </tr>
                 <tr>
                     <td><input class="input" type="text"></td>
-                    <td><input class="input" type="text"></td>
+                    <td><input class="input" type="number" min="0"></td>
                     <td>
-                        <select name="grades" id="grades">
+                        <select class="input">
                             <option value="4">A+</option>
                             <option value="3.75">A</option>
                             <option value="3.5">B+</option>
