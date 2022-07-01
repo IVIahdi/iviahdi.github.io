@@ -7,10 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPA calculator</title>
     <style>
-        * {
-            align-items: center;
-        }
-
         table,
         tr,
         th,
@@ -37,9 +33,9 @@
 
     <script>
         function add() {
-            var table = document.getElementById('table')
-            var row = table.insertRow()
-            var cell = row.insertCell().innerHTML = '<td><input type="text"></td>'
+            let table = document.getElementById('table')
+            let row = table.insertRow()
+            let cell = row.insertCell().innerHTML = '<td><input type="text"></td>'
             cell = row.insertCell().innerHTML = '<td><input type="text"></td>'
             cell = row.insertCell().innerHTML = `
             <select name="grades" id="grades">
@@ -55,12 +51,22 @@
                         </select>
             `
         }
+        function calc(){
+            let table = document.getElementById('table')
+            for(let i in table.rows){
+                let row = table.rows[i]
+                for(let j in row.cells){
+                    let col = row.cells[j]
+                    console.log(col);
+                }
+            }
+        }
     </script>
 </head>
 
 <body>
-    <div style="display:flex ; justify-content:center ; align-items:center ;">
-        <div style="align-items:center ; background-color: lightblue; overflow: hidden; padding: 1% 15%;">
+    <div style="display:flex ; justify-content:center ; align-items:center ; height: 95vh">
+        <div style="align-items:center ; background-color: lightblue; padding: 1% 15%; height: 100%;">
             <h1 style="color:darkgreen; text-align: center;">Calculate your GPA!</h1>
             <table id="table" style="border:20px ; width: 100%;">
                 <tr>
@@ -86,7 +92,8 @@
                     </td>
                 </tr>
             </table>
-            <button id="add" onclick="add()">Another Course?</button>
+            <button onclick="add()">Another Course?</button>
+            <button onclick="calc()">Calculate</button>
 
         </div>
     </div>
