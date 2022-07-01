@@ -14,6 +14,7 @@
             border: 0.1em solid black;
             border-collapse: collapse;
             text-align: center;
+            padding: 0.3em;
         }
 
         td,
@@ -32,12 +33,14 @@
     </style>
 
     <script>
+        courses = 1
         function add() {
-            let table = document.getElementById('table')
-            let row = table.insertRow()
-            let cell = row.insertCell().innerHTML = '<td><input type="text"></td>'
-            cell = row.insertCell().innerHTML = '<td><input type="text"></td>'
-            cell = row.insertCell().innerHTML = `
+            if (courses < 10) {
+                let table = document.getElementById('table')
+                let row = table.insertRow()
+                let cell = row.insertCell().innerHTML = '<td><input class="input" type="text"></td>'
+                cell = row.insertCell().innerHTML = '<td><input class="input" type="text"></td>'
+                cell = row.insertCell().innerHTML = `
             <select name="grades" id="grades">
                             <option value="4">A+</option>
                             <option value="3.75">A</option>
@@ -50,17 +53,19 @@
                             <option value="0">F</option>
                         </select>
             `
-        }
-        function calc(){
-            let table = document.getElementById('table')
-            for(let i in table.rows){
-                let row = table.rows[i]
-                for(let j in row.cells){
-                    let col = row.cells[j]
-                    console.log(col);
-                }
+                courses++
+            }
+            else {
+                alert('More than 10 courses?? who are you?')
             }
         }
+        function calc() {
+            let inputs = document.getElementsByClassName('input')
+            for(let i of inputs){
+                console.log(i.value);
+            }
+
+            }
     </script>
 </head>
 
@@ -75,8 +80,8 @@
                     <th>Grade</th>
                 </tr>
                 <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
+                    <td><input class="input" type="text"></td>
+                    <td><input class="input" type="text"></td>
                     <td>
                         <select name="grades" id="grades">
                             <option value="4">A+</option>
