@@ -48,7 +48,7 @@ button {
   outline: none;
   border: none;
   border-radius: 15%;
-  background-color: snow;
+  background-color: whitesmoke;
 }
 
 button:hover {
@@ -74,4 +74,12 @@ button:hover {
   75% {
     transform: scale(0.95, 1.05);
   }
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+#pic{
+  pointer-events: none;
 }

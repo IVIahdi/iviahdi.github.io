@@ -5,20 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GPA calculator</title>
     <style>
         * {
             align-items: center;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 0.1em solid black;
         }
     </style>
 </head>
 
 <body>
     <div style="display:flex ; justify-content:center ; align-items:center ;">
-        <div
-            style="display: flex; justify-content:center ;
-             align-items:center ; background-color: lightblue; overflow: hidden; padding: 1% 15%;">
+        <div style="align-items:center ; background-color: lightblue; overflow: hidden; padding: 1% 15%;">
             <h1 style="color:darkgreen ;">Calculate your GPA!</h1>
+            <table style="border:20 ; width: 100%;">
+                <tr>
+                    <td>Course</td>
+                    <td>Credits</td>
+                    <td>Grade</td>
+                </tr>
+            </table>
 
         </div>
     </div>
