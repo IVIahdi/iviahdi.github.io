@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPA calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <style>
         table,
         tr,
@@ -38,10 +39,10 @@
             if (courses < 10) {
                 let table = document.getElementById('table')
                 let row = table.insertRow()
-                let cell = row.insertCell().innerHTML = '<td><input class="input" type="text"></td>'
-                cell = row.insertCell().innerHTML = '<td><input class="input" type="text"></td>'
+                let cell = row.insertCell().innerHTML = '<td><input class="input is-rounded" type="text" placeholder="Enter Course name"></td>'
+                cell = row.insertCell().innerHTML = '<td><input class="input is-rounded" type="number" placeholder="Enter Credits"></td>'
                 cell = row.insertCell().innerHTML = `
-            <select class="input">
+            <select class="select is-rounded">
                             <option value="4">A+</option>
                             <option value="3.75">A</option>
                             <option value="3.5">B+</option>
@@ -61,18 +62,18 @@
         }
         function calc() {
             let inputs = document.getElementsByClassName('input')
-            for(let i of inputs){
+            for (let i of inputs) {
                 console.log(i.value);
             }
 
-            }
+        }
     </script>
 </head>
 
 <body>
     <div style="display:flex ; justify-content:center ; align-items:center ; height: 95vh">
         <div style="align-items:center ; background-color: lightblue; padding: 1% 15%; height: 100%;">
-            <h1 style="color:darkgreen; text-align: center;">Calculate your GPA!</h1>
+            <h1 class="" style="color:darkgreen; text-align: center;">Calculate your GPA!</h1>
             <table id="table" style="border:20px ; width: 100%;">
                 <tr>
                     <th>Course</th>
@@ -80,10 +81,10 @@
                     <th>Grade</th>
                 </tr>
                 <tr>
-                    <td><input class="input" type="text"></td>
-                    <td><input class="input" type="number" min="0"></td>
+                    <td><input class="input is-rounded" type="text" placeholder="Enter Course name"></td>
+                    <td><input class="input is-rounded" type="number" placeholder="Enter Credits"></td>
                     <td>
-                        <select class="input">
+                        <select class="select is-rounded">
                             <option value="4">A+</option>
                             <option value="3.75">A</option>
                             <option value="3.5">B+</option>
@@ -97,9 +98,9 @@
                     </td>
                 </tr>
             </table>
-            <button onclick="add()">Another Course?</button>
-            <button onclick="calc()">Calculate</button>
-
+            <a class="button is-info is-medium" onclick="add()">Another Course?</a>
+            <a class="button is-warning is-medium" onclick="calc()">Calculate</a>
+            
         </div>
     </div>
 
