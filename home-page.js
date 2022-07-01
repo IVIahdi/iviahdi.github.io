@@ -1,16 +1,7 @@
 function logo_clicked() {
-    let logo = document.getElementById('pic')
+    let logo = document.getElementById('logo')
     let content = document.getElementById('big-content')
-    if (logo.style.opacity == 0.2){
-        logo.style.opacity = 1
-        content.classList.toggle('fade');
-    }
-    else{
-        logo.style.opacity = 0.2
-        content.classList.toggle('fade');
-    }
-}
-function heart(){
-    let logo = document.getElementById('pic')
-    logo.classList.toggle('animate__heartBeat')
+    logo.classList.toggle("fade")
+    logo.classList.toggle("animate__heartBeat")
+    content.classList.toggle("fade")
 }
