@@ -34,15 +34,16 @@
     </style>
 
     <script>
+        let h1 = document.createElement('H1');
         courses = 1
         function add() {
-            if (courses < 10) {
+            if (courses < 8) {
                 let table = document.getElementById('table')
                 let row = table.insertRow()
-                let cell = row.insertCell().innerHTML = '<td><input class="input is-rounded" type="text" placeholder="Enter Course name"></td>'
-                cell = row.insertCell().innerHTML = '<td><input class="input is-rounded" type="number" placeholder="Enter Credits"></td>'
+                let cell = row.insertCell().innerHTML = '<td><input class="input is-rounded col1" type="text" placeholder="Enter Course name"></td>'
+                cell = row.insertCell().innerHTML = '<td><input class="input is-rounded col2" type="number" min="0" placeholder="Enter hours"></td>'
                 cell = row.insertCell().innerHTML = `
-            <select class="select is-rounded">
+            <select class="select is-rounded col3">
                             <option value="4">A+</option>
                             <option value="3.75">A</option>
                             <option value="3.5">B+</option>
@@ -57,34 +58,57 @@
                 courses++
             }
             else {
-                alert('More than 10 courses?? who are you?')
+                alert('More than 8 courses?? who are you?')
             }
         }
         function calc() {
-            let inputs = document.getElementsByClassName('input')
-            for (let i of inputs) {
-                console.log(i.value);
+            let c = document.getElementsByClassName('col1')
+            let h = document.getElementsByClassName('col2')
+            let p = document.getElementsByClassName('col3')
+            const reducer = (accumulator, curr) => accumulator + curr;
+            h_list = []
+            p_list = []
+            c_list = []
+            for (let index = 0; index < h.length; index++) {
+                let element = h[index];
+                h_list.push(Number(element.value))
+                element = p[index]
+                p_list.push(Number(element.value))
+                element = c[index]
+                c_list.push(Number(element.value))
             }
+            let h_sum = h_list.reduce(reducer)
+            let QP = 0
+            for (let index = 0; index < h_list.length; index++) {
+                QP += h_list[index] * p_list[index]
+            }
+
+            myDiv = document.getElementById('myDiv')
+            h1.innerHTML = `Your GPA = ${(QP/h_sum).toFixed(2)}`;
+            h1.style = 'margin-top: 1em; text-align: center; font-weight: 400; font-size: x-large;'
+            myDiv.appendChild(h1)
+
+
 
         }
     </script>
 </head>
 
 <body>
-    <div style="display:flex ; justify-content:center ; align-items:center ; height: 95vh">
-        <div style="align-items:center ; background-color: lightblue; padding: 1% 15%; height: 100%;">
-            <h1 class="" style="color:darkgreen; text-align: center;">Calculate your GPA!</h1>
-            <table id="table" style="border:20px ; width: 100%;">
+    <div style="display:flex ; justify-content:center ; align-items:center ; height: 99vh">
+        <div id="myDiv" style="align-items:center ; background-color: gainsboro  ; padding: 1% 15%; height: 100%;">
+            <h1 style="color:darkgreen; text-align: center; font-weight: 700; font-size: xx-large;">Calculate your GPA!</h1>
+            <table id="table" style="border:20px ; width: 100%; margin-bottom: 1em;">
                 <tr>
                     <th>Course</th>
                     <th>Credits</th>
                     <th>Grade</th>
                 </tr>
                 <tr>
-                    <td><input class="input is-rounded" type="text" placeholder="Enter Course name"></td>
-                    <td><input class="input is-rounded" type="number" placeholder="Enter Credits"></td>
+                    <td><input class="input is-rounded col1" type="text" placeholder="Enter Course name"></td>
+                    <td><input class="input is-rounded col2" type="number" min="0" placeholder="Enter hours"></td>
                     <td>
-                        <select class="select is-rounded">
+                        <select class="select is-rounded col3">
                             <option value="4">A+</option>
                             <option value="3.75">A</option>
                             <option value="3.5">B+</option>
@@ -98,9 +122,12 @@
                     </td>
                 </tr>
             </table>
-            <a class="button is-info is-medium" onclick="add()">Another Course?</a>
-            <a class="button is-warning is-medium" onclick="calc()">Calculate</a>
-            
+            <div style="text-align: center ;">
+                <button class="button is-info is-medium" style="margin: 0 3rem;" onclick="add()">Another Course?</button>
+                <button class="button is-warning is-medium" style="margin: 0 3rem;" onclick="calc()">Calculate</button>
+                <button class="button is-danger is-medium" style="margin: 0 3rem;" onclick="window.location.reload();">Refresh?</button>
+            </div>
+
         </div>
     </div>
 
