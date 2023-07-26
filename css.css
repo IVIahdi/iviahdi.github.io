@@ -1,88 +1,91 @@
-* {
-    margin: 0;
-    padding: 0
+لاody {
+    margin-top: 20px;
 }
 
-body {
-    background-color: #000
+.icon-box.medium {
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
 }
 
-.card {
-    width: 350px;
-    background-color: #efefef;
-    border: none;
-    cursor: pointer;
-    transition: all 0.5s;
+.icon-box {
+    font-size: 30px;
+    margin-bottom: 33px;
+    display: inline-block;
+    color: #ffffff;
+    height: 65px;
+    width: 65px;
+    line-height: 65px;
+    background-color: #59b73f;
+    text-align: center;
+    border-radius: 0.3rem;
 }
 
-.image img {
-    transition: all 0.5s
-}
-
-.card:hover .image img {
-    transform: scale(1.5)
-}
-
-.btn {
-    height: 140px;
-    width: 140px;
-    border-radius: 50%
-}
-
-.name {
-    font-size: 22px;
-    font-weight: bold
-}
-
-.idd {
+.social-icon-style2 li a {
+    display: inline-block;
     font-size: 14px;
-    font-weight: 600
+    text-align: center;
+    color: #ffffff;
+    background: #59b73f;
+    height: 41px;
+    line-height: 41px;
+    width: 41px;
 }
 
-.idd1 {
-    font-size: 12px
+.rounded-3 {
+    border-radius: 0.3rem !important;
 }
 
-.number {
-    font-size: 22px;
-    font-weight: bold
+.social-icon-style2 {
+    margin-bottom: 0;
+    display: inline-block;
+    padding-left: 10px;
+    list-style: none;
 }
 
-.follow {
-    font-size: 12px;
-    font-weight: 500;
-    color: #444444
+.social-icon-style2 li {
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 5px;
 }
 
-.btn1 {
-    height: 40px;
-    width: 150px;
-    border: none;
-    background-color: #000;
-    color: #aeaeae;
-    font-size: 15px
+a,
+a:active,
+a:focus {
+    color: #616161;
+    text-decoration: none;
+    transition-timing-function: ease-in-out;
+    -ms-transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-duration: .2s;
+    -ms-transition-duration: .2s;
+    -moz-transition-duration: .2s;
+    -webkit-transition-duration: .2s;
+    -o-transition-duration: .2s;
 }
 
-.text span {
-    font-size: 13px;
-    color: #545454;
-    font-weight: 500
+.text-secondary,
+.text-secondary-hover:hover {
+    color: #59b73f !important;
 }
 
-.icons i {
-    font-size: 19px
+.display-25 {
+    font-size: 1.4rem;
 }
 
-hr .new1 {
-    border: 1px solid
+.text-primary,
+.text-primary-hover:hover {
+    color: #ff712a !important;
 }
 
-.join {
-    font-size: 14px;
-    color: #a0a0a0;
-    font-weight: bold
+p {
+    margin: 0 0 20px;
 }
 
-.date {
-    background-color: #ccc
+.mb-1-6,
+.my-1-6 {
+    margin-bottom: 1.6rem;
 }
