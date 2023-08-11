@@ -113,12 +113,12 @@
         .fa-facebook {
             color: #1773EA;
         }
+
         .section {
             display: none;
             opacity: 0;
             transition: opacity 0.7s ease;
         }
-        
     </style>
 </head>
 
@@ -280,36 +280,39 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
         </script>
-        <script>
+    <script>
 
-            document.addEventListener("DOMContentLoaded", function () {
-                const tabLinks = document.querySelectorAll(".nav-link");
-                const sections = document.querySelectorAll(".section");
-    
-                tabLinks.forEach(function (link) {
-                    link.addEventListener("click", function (event) {
-                        event.preventDefault();
-                        const targetId = this.getAttribute("href");
-                        const targetSection = document.querySelector(targetId);
-    
-                        if (targetSection) {
-                            // Hide all sections
-                            sections.forEach(function (section) {
-                                section.style.opacity = 0;
-                                section.style.display = "none";
-                            });
-    
-                            // Show the targeted section
-                            targetSection.style.display = "block";
-                            setTimeout(function () {
-                                targetSection.style.opacity = 1;
-                            }, 10); // Delay to ensure the opacity is set after display is updated
-                        }
-                    });
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabLinks = document.querySelectorAll(".nav-link");
+            const sections = document.querySelectorAll(".section");
+
+            tabLinks.forEach(function (link) {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute("href");
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        // Hide all sections
+                        sections.forEach(function (section) {
+                            section.style.opacity = 0;
+                            section.style.display = "none";
+                        });
+
+                        // Show the targeted section
+                        targetSection.style.display = "block";
+                        setTimeout(function () {
+                            targetSection.style.opacity = 1;
+                        }, 10); // Delay to ensure the opacity is set after display is updated
+
+                        // Scroll to the section
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
                 });
             });
+        });
 
-        </script>
+    </script>
 </body>
 
 </html>
