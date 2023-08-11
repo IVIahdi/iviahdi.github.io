@@ -115,6 +115,8 @@
         }
         .section {
             display: none;
+            opacity: 0;
+            transition: opacity 0.7s ease;
         }
         
     </style>
@@ -293,11 +295,15 @@
                         if (targetSection) {
                             // Hide all sections
                             sections.forEach(function (section) {
+                                section.style.opacity = 0;
                                 section.style.display = "none";
                             });
     
                             // Show the targeted section
                             targetSection.style.display = "block";
+                            setTimeout(function () {
+                                targetSection.style.opacity = 1;
+                            }, 10); // Delay to ensure the opacity is set after display is updated
                         }
                     });
                 });
