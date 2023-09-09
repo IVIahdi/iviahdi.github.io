@@ -5,8 +5,29 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
 (function() {
   "use strict";
+
+  // JavaScript to show and hide the overlay
+document.addEventListener("DOMContentLoaded", function() {
+  const overlay = document.getElementsByClassName("overlay");
+
+  // Function to show the overlay
+  function showOverlay() {
+      overlay.style.display = "absolute"; // Display the overlay
+  }
+
+  // Function to hide the overlay
+  function hideOverlay() {
+      overlay.style.display = "none"; // Hide the overlay
+  }
+
+  // Example usage:
+  // Show the overlay when the form is being processed
+  // You can call showOverlay() when the form is submitted and hideOverlay() when the submission is complete.
+});
+
 
   /**
    * Easy selector helper function

@@ -1207,3 +1207,31 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+/* Add your existing styles for the form container if needed */
+
+.form-container {
+  position: relative; /* Make it a relative container for absolute positioning */
+}
+
+/* Style for the overlay */
+.overlay {
+  position: absolute; /* Position relative to the form container */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Gray background with 50% opacity */
+  display: block; /* Initially hidden */
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay p {
+  color: white; /* Text color */
+  font-size: 24px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Background color with 70% opacity */
+  padding: 20px;
+  border-radius: 10px;
+}
